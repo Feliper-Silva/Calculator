@@ -8,45 +8,60 @@ namespace Calculator
         {
             Console.Clear();
             Console.Write("Bem Vindo(a) a nossa primeira calculadora em c#\nDeseja Iniciar ?\n1 - Iniciar\n2 - Encerrar Calculadora\n");
-            int opcao = int.Parse(Console.ReadLine());
-            while(opcao == 1)
+            int Opcao = int.Parse(Console.ReadLine());
+            while(Opcao == 1)
             {           
                 int count =0;
                 Console.WriteLine("Digite o primeiro valor");
-                float number1 = float.Parse(Console.ReadLine());
+                float Number1 = float.Parse(Console.ReadLine());
                 Console.WriteLine("Digite o segundo número: ");
-                float number2 = float.Parse(Console.ReadLine());
+                float Number2 = float.Parse(Console.ReadLine());
 
                 Console.Write("Escolha uma opção abaixo:\n1 - Soma\n2 - Multiplicação\n3 - Divisão\n4 - Encerrar Calculadora\n");
-                int acao = int.Parse(Console.ReadLine());
+                int Acao = int.Parse(Console.ReadLine());
 
 
-                float result;
+                float Result=0;
 
-                switch (acao){
+                switch (Acao){
                     case 1:
-                        result = number1 + number2;
-                        Console.WriteLine($"O resultado da Soma :\n{number1}  + {number2} = {result}");
+                        Result = Soma (Number1,Number2);
+                        Console.WriteLine($"O resultado da Soma :\n{Number1}  + {Number2} = {Result}");
                         count ++;
                         break;
                     case 2:
-                        result = number1 * number2;
-                        Console.WriteLine($"O resultado da Multiplicação :\n{number1}  * {number2} = {result}");
+                        Result = Multiplicacao (Number1,Number2);
+                        Console.WriteLine($"O resultado da Multiplicação :\n{Number1}  * {Number2} = {Result}");
                         count ++;
                         break;
                     case 3:
-                        result = number1 / number2;
-                        Console.WriteLine($"O resultado da Multiplicação :\n{number1}  / {number2} = {result}");
+                        Result = Divisao (Number1,Number2);
+                        Console.WriteLine($"O resultado da Multiplicação :\n{Number1}  / {Number2} = {Result}");
                         count ++;
                         break;
                     case 4:
-                        opcao ++;
+                        Opcao ++;
                         break;
                     default:
                         Console.WriteLine("opção invalida");
                         break;
                 }
             }
+        }
+
+        static float Soma (float number1, float number2)
+        {
+            return number1 + number2;                
+        }
+
+        static float Multiplicacao (float number1, float number2)
+        {
+            return number1 * number2;
+        }
+
+        static float Divisao (float number1, float number2)
+        {
+            return number1 / number2;
         }
     }
 }
