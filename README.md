@@ -5,3 +5,9 @@
 
 ## Tecnologia
 - C# 
+- .NET 7
+
+## Utilizar
+
+- Clone do projeto
+- Terminal digite : dotnet run
