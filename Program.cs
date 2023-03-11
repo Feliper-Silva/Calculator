@@ -17,7 +17,7 @@ namespace Calculator
                 Console.WriteLine("Digite o segundo número: ");
                 float Number2 = float.Parse(Console.ReadLine());
 
-                Console.Write("Escolha uma opção abaixo:\n1 - Soma\n2 - Multiplicação\n3 - Divisão\n4 - Encerrar Calculadora\n");
+                Console.Write("Escolha uma opção abaixo:\n1 - Soma\n2 - Subtração\n3 - Multiplicação\n4 - Divisão\n5 - Encerrar Calculadora\n");
                 int Acao = int.Parse(Console.ReadLine());
 
 
@@ -30,16 +30,21 @@ namespace Calculator
                         count ++;
                         break;
                     case 2:
+                        Result = Subtracao (Number1,Number2);
+                        Console.WriteLine($"O resultado da Soma :\n{Number1}  + {Number2} = {Result}");
+                        count ++;
+                        break;
+                    case 3:
                         Result = Multiplicacao (Number1,Number2);
                         Console.WriteLine($"O resultado da Multiplicação :\n{Number1}  * {Number2} = {Result}");
                         count ++;
                         break;
-                    case 3:
+                    case 4:
                         Result = Divisao (Number1,Number2);
                         Console.WriteLine($"O resultado da Multiplicação :\n{Number1}  / {Number2} = {Result}");
                         count ++;
                         break;
-                    case 4:
+                    case 5:
                         Opcao ++;
                         break;
                     default:
@@ -52,6 +57,11 @@ namespace Calculator
         static float Soma (float number1, float number2)
         {
             return number1 + number2;                
+        }
+
+        static float Subtracao (float number1, float number2)
+        {
+            return number1 - number2;                
         }
 
         static float Multiplicacao (float number1, float number2)
